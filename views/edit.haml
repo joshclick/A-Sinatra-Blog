@@ -18,11 +18,6 @@
           %textarea#post_body(name='post[body]')
             :preserve
               #{body}
-        %p
-          %label(for='published_on')
-            Published On
-            %br
-          %input#published_on{:type => 'text', :name => 'post[published_on]', :value => @post.published_on}
         %fieldset
           %p
             %button(type="submit") Save Post
