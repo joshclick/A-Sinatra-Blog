@@ -1,0 +1,33 @@
+.row
+  .small-12.columns
+    %header
+      %h1 Edit Post
+  %article.small-12.columns
+    %form{:action => ["/blog/update", @post.id].join, :method => 'post'}
+      %fieldset
+        %legend Edit Post
+        %p
+          %label(for='post_title')
+            Title
+            %br
+          %input#post_title{:type => 'text', :name => 'post[title]', :value => @post.title}
+        %p
+          %label(for='post_body')
+            Body
+            %br
+          %textarea#post_body(name='post[body]')
+            :preserve
+              #{body}
+        %p
+          %label(for='published_on')
+            Published On
+            %br
+          %input#published_on{:type => 'text', :name => 'post[published_on]', :value => @post.published_on}
+        %fieldset
+          %p
+            %button(type="submit") Save Post
+            or
+            %a(href='/blog') Cancel
+
+    %form{:action => ["/blog/del/",@post.id].join, :method => "post"}
+      %button(type="submit") Delete

@@ -1,0 +1,23 @@
+.row
+  .small-12.columns
+    %header
+      %h1 Create Post
+  %article.small-12.columns
+    %form(action="/blog/new" method='post')
+      %fieldset
+        %legend New Post
+        %p
+          %label(for='post_title')
+            Title
+            %br
+          %input#post_title(type='text'name='post[title]')
+        %p
+          %label(for='post_body')
+            Body
+            %br
+          %textarea#post_body(name='post[body]')
+        %fieldset
+          %p
+            %button Create Post
+            or
+            %a(href='/blog') Cancel
